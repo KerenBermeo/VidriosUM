@@ -1,12 +1,14 @@
 import './App.css';
+import { BathroomPartitions } from './components/BathroomPartitions';
 import { OurProducts } from './components/OurProducts';
 import { StarBar } from './components/StarBar';
 function App() {
   return (
-    <main>
+    <>
       <StarBar/>
-      <OurProducts/> 
-    </main>
+      <OurProducts/>
+      <BathroomPartitions/> 
+    </>
   );
 }
 
