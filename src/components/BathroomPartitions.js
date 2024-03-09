@@ -1,46 +1,12 @@
-import React, { useEffect } from 'react';
-import Swiper from 'swiper';
-import 'swiper/swiper-bundle.css'; // Importa el CSS de Swiper
+import React from 'react';
+import useSwiperEffect from './SwiperEffect';
 
 import glassvit2 from '../image/divisiones/glassvit/2.png';
 import batiente1 from '../image/divisiones/batiente/1.png';
 import otroglassvit2 from '../image/divisiones/otroGlassvit/2.png';
 
 export const BathroomPartitions = () => {
-    useEffect(() => {
-        let swiper; // Declaramos swiper fuera del bloque try-catch para que esté disponible en el bloque de retorno
-    
-        try {
-          // Inicializa Swiper cuando el componente se monta
-          swiper = new Swiper('.divisiones-slider', {
-            slidesPerView: 'auto',
-            grabCursor: true,
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-            keyboard: true,
-          });
-          console.log('Swiper inicializado correctamente:', swiper);
-        } catch (error) {
-          // Captura y maneja cualquier error que ocurra durante la inicialización de Swiper
-          console.error('Error al inicializar Swiper:', error);
-        }
-    
-        // Destruye Swiper cuando el componente se desmonta
-        return () => {
-          try {
-            swiper.destroy();
-          } catch (error) {
-            // Captura y maneja cualquier error que ocurra durante la destrucción de Swiper
-            console.error('Error al destruir Swiper:', error);
-          }
-        };
-  }, []); // La dependencia vacía asegura que useEffect solo se ejecute una vez
+    useSwiperEffect();
 
   return (
     <section className="divisiones" id="divisiones">
